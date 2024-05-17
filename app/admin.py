@@ -2,6 +2,14 @@ from django.contrib import admin
 from .models import *
 # Register your models here.
 
+from django.contrib import admin
+from .models import Language
+
+@admin.register(Language)
+class LanguageAdmin(admin.ModelAdmin):
+    list_display = ('language',)
+
+
 class what_you_will_learn_TabularInline(admin.TabularInline):
     model = what_you_will_learn
 
