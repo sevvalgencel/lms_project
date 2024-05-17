@@ -5,16 +5,16 @@
     ================================================== -->
     <header class="py-8 py-md-11" style="background-image: none;">
         <div class="container text-center py-xl-2">
-            <h1 class="display-4 fw-semi-bold mb-0">Get in touch today!</h1>
+            <h1 class="display-4 fw-semi-bold mb-0">Hemen iletişime geçin!</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb breadcrumb-scroll justify-content-center">
                     <li class="breadcrumb-item">
-                        <a class="text-gray-800" href="#">
+                        <a class="text-gray-800" href="{% url 'home' %}">
                             Home
                         </a>
                     </li>
                     <li class="breadcrumb-item text-gray-800 active" aria-current="page">
-                        Get in touch today!
+                        Hemen iletişime geçin!
                     </li>
                 </ol>
             </nav>
@@ -29,7 +29,7 @@
     <div class="container">
         <div class="row row-cols-md-2 mb-8 mb-lg-11">
             <div class="col-md">
-                <h1 class="mb-6">Contact Details</h1>
+                <h1 class="mb-6">İletişim detayları</h1>
 
                 <div class="row row-cols-12 row-cols-xl-2">
                     <div class="col-xl mb-6">
@@ -45,10 +45,10 @@
 
                             </div>
                             <div class="media-body flex-shrink-1">
-                                <h5 class="mb-4">Find Us</h5>
+                                <h5 class="mb-4">Bize ulaşın</h5>
                                 <address class="">
-                                     Ahemdabad,
-                                     Gujarat
+                                     Selçuklu,
+                                     Konya
                                 </address>
                             </div>
                         </div>
@@ -64,8 +64,8 @@
 
                             </div>
                             <div class="media-body flex-shrink-1">
-                                <h5 class="mb-4">Phone</h5>
-                                <a href="tel:3159052321" class="text-gray-800 d-block">Not Available</a>
+                                <h5 class="mb-4">Telefon</h5>
+                                <a href="tel:3159052321" class="text-gray-800 d-block">(0332) 223 33 73</a>
                             </div>
                         </div>
                     </div>
@@ -85,9 +85,8 @@
 
                             </div>
                             <div class="media-body flex-shrink-1">
-                                <h5 class="mb-4">Working Hours</h5>
-                                <p class="mb-0">Mon-Fri: 8 AM - 5 PM</p>
-                                <p class="mb-0">Holiday</p>
+                                <h5 class="mb-4">Çalışma Saatleri</h5>
+                                <p class="mb-0">Pazartesi-Cuma: 08:00 - 17:00</p>
                             </div>
                         </div>
                     </div>
@@ -103,8 +102,8 @@
 
                             </div>
                             <div class="media-body flex-shrink-1">
-                                <h5 class="mb-4">Write to Us</h5>
-                                <a href="mailto:devpatidarofficial1882@gmail.com" class="text-gray-800">devpatidarofficial1882@gmail.com</a>
+                                <h5 class="mb-4">Bize Yazın!</h5>
+                                <a href="mailto:tfogri@selcuk.edu.tr" class="text-gray-800">tfogris@selcuk.edu.tr</a>
                             </div>
                         </div>
                     </div>
@@ -123,7 +122,7 @@
 
                             </div>
                             <div class="media-body flex-shrink-1">
-                                <h5 class="mb-4">Follow Us</h5>
+                                <h5 class="mb-4">Sosyal Medya hesaplarımızdan takip edin!</h5>
                                 <!-- Social -->
                                 <ul class="list-unstyled list-inline list-social mb-4 mb-md-0 mx-n4">
                                     <li class="list-inline-item list-social-item">
@@ -159,11 +158,11 @@
             </div>
 
             <div class="col-md">
-                <h1 class="mb-6">Have A Question?</h1>
+                <h1 class="mb-6">Sorunuz mu var?</h1>
                 <form class="row" method="post">
                     {% csrf_token %}
                     <div class="form-group mb-6 col-xl-6">
-                        <label for="exampleInputTitle1">Name</label>
+                        <label for="exampleInputTitle1">Ad</label>
                         <input type="text" class="form-control placeholder-1" id="exampleInputTitle1" placeholder="" name="name">
                     </div>
 
@@ -173,19 +172,19 @@
                     </div>
 
                     <div class="form-group mb-6 col-12">
-                        <label for="exampleFormControlTextarea1">Message</label>
-                        <textarea class="form-control placeholder-1" id="exampleFormControlTextarea1" rows="6" placeholder="Content" name="message"></textarea>
+                        <label for="exampleFormControlTextarea1">Mesajınız.</label>
+                        <textarea class="form-control placeholder-1" id="exampleFormControlTextarea1" rows="6" placeholder="Bize iletmek istediğiniz mesajı yazınız." name="message"></textarea>
                     </div>
 
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-block mw-md-300p">SEND</button>
+                        <button type="submit" class="btn btn-primary btn-block mw-md-300p">GÖNDER</button>
                     </div>
                 </form>
             </div>
         </div>
 
         <div class="mb-8 mb-md-11 rounded overflow-hidden grayscal-hover">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235013.70717427065!2d72.43965389034543!3d23.020497772707397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1644600208366!5m2!1sen!2sin" width="1200" height="550" style="border:0;width: 100%;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <iframe src="https://www.google.com/maps/place/Sel%C3%A7uk+%C3%9Cniversitesi+Teknoloji+Fak%C3%BCltesi+(+A+Blok)/@38.0286307,32.5067425,17z/data=!4m6!3m5!1s0x14d08d15e76415db:0x57050886b797f0ee!8m2!3d38.0286307!4d32.5093174!16s%2Fg%2F1tfljs3m?entry=ttu" width="1200" height="550" style="border:0;width: 100%;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </div>
     </div>
 
