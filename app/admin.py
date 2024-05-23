@@ -30,3 +30,5 @@ admin.site.register(Level)
 admin.site.register(what_you_will_learn)
 admin.site.register(Requirements)
 admin.site.register(Lesson)
+admin.site.register(UserCourse)
+
