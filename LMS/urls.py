@@ -22,7 +22,7 @@ urlpatterns = [
     path('accounts/profile', user_login.PROFILE, name='profile'),
     path('accounts/profile/update', user_login.PROFILE_UPDATE,name='profile_update'),
     path('checkout/<slug:slug>',views.CHECKOUT, name='checkout'),
-
+    path('my-course',views.MY_COURSE,name= 'my-course')
 
 
 
