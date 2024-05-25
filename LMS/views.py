@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import redirect,render
 from app.models import Categories,Course,Level,Video,UserCourse
 from django.template.loader import render_to_string
@@ -131,7 +132,8 @@ def CHECKOUT (request,slug):
             course = course,
         )
         course.save()
-        return redirect('home')
+        messages.success(request,'Kurs başarıyla satın alındı !')
+        return redirect('my-course')
     return render (request, 'checkout/checkout.html')
 
 
