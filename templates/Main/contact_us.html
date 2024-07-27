@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block title %}Contact Us{% endblock %}
 {% block content %}
+<!-- templates/contact-us.html -->
+
+
 <!-- PAGE TITLE
     ================================================== -->
     <header class="py-8 py-md-11" style="background-image: none;">
@@ -24,8 +27,7 @@
     </header>
 
 
-    <!-- CONTACT
-    ================================================== -->
+
     <div class="container">
         <div class="row row-cols-md-2 mb-8 mb-lg-11">
             <div class="col-md">
@@ -157,30 +159,26 @@
                 </div>
             </div>
 
-            <div class="col-md">
+
+       <body>
+         <div class="col-md">
                 <h1 class="mb-6">Sorunuz mu var?</h1>
-                <form class="row" method="post">
+            {% if success %}
+                 <h1>Mesajınız başarıyla gönderildi!</h1>
+                 <p>Düşünceleriniz bizim için çok önemli! Teşekkür ederiz!</p>
+            {% else %}
+                  <form method="post" action="{% url 'contact_us' %}">
                     {% csrf_token %}
-                    <div class="form-group mb-6 col-xl-6">
-                        <label for="exampleInputTitle1">Ad</label>
-                        <input type="text" class="form-control placeholder-1" id="exampleInputTitle1" placeholder="" name="name">
-                    </div>
+                    {{ form.as_p }}
 
-                    <div class="form-group mb-6 col-xl-6">
-                        <label for="exampleInputTitle2">Email</label>
-                        <input type="email" class="form-control placeholder-1" id="exampleInputTitle2" placeholder="E-mailinizi yazınız." name="email">
-                    </div>
 
-                    <div class="form-group mb-6 col-12">
-                        <label for="exampleFormControlTextarea1">Mesajınız.</label>
-                        <textarea class="form-control placeholder-1" id="exampleFormControlTextarea1" rows="6" placeholder="Bize iletmek istediğiniz mesajı yazınız." name="message"></textarea>
-                    </div>
+                    <button type="submit" class="btn btn-primary">Gönder</button>
 
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-block mw-md-300p">GÖNDER</button>
-                    </div>
-                </form>
-            </div>
+                  </form>
+                {% endif %}
+           </div>
+       </body>
+
         </div>
 
 

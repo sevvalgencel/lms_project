@@ -6,16 +6,16 @@
     ================================================== -->
     <header class="py-8 py-md-11" style="background-image: none;">
         <div class="container text-center py-xl-2">
-            <h1 class="display-4 fw-semi-bold mb-0">Login</h1>
+            <h1 class="display-4 fw-semi-bold mb-0">Giriş Yap</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb breadcrumb-scroll justify-content-center">
                     <li class="breadcrumb-item">
-                        <a class="text-gray-800" href="#">
+                        <a class="text-gray-800" href="{% url 'home' %}">
                             Home
                         </a>
                     </li>
                     <li class="breadcrumb-item text-gray-800 active" aria-current="page">
-                        Login
+                        Giriş yap
                     </li>
                 </ol>
             </nav>
@@ -31,7 +31,7 @@
         <div class="row gx-0">
             <div class="col-md-7 col-xl-4 mx-auto">
                 <!-- Login -->
-                <h3 class="mb-6">Log In to Your Skola Account!</h3>
+                <h3 class="mb-6">Skola hesabına giriş yap !</h3>
                 {% include 'components/msg.html' %}
 
                 <!-- Form Login -->
@@ -42,13 +42,13 @@
                         <label for="modalSigninEmail1">
                              Email
                         </label>
-                        <input type="email" class="form-control" id="modalSigninEmail1" placeholder="creativelayers" name="email">
+                        <input type="email" class="form-control" id="modalSigninEmail1" placeholder="E-mail'inizi giriniz." name="email">
                     </div>
 
                     <!-- Password -->
                     <div class="form-group mb-5">
                         <label for="modalSigninPassword1">
-                            Password
+                            Şifre
                         </label>
                         <input type="password" class="form-control" id="modalSigninPassword1" placeholder="**********" name="password">
                     </div>
@@ -57,24 +57,24 @@
                         <div class="form-check">
                             <input class="form-check-input text-gray-800" type="checkbox" id="autoSizingCheck1">
                             <label class="form-check-label text-gray-800" for="autoSizingCheck1">
-                                Remember me
+                                Beni hatırla
                             </label>
                         </div>
 
                         <div class="ms-auto">
-                            <a class="text-gray-800" href="{% url 'password_reset' %}">Forgot Password</a>
+                            <a class="text-gray-800" href="{% url 'password_reset' %}">Şifremi Unuttum.</a>
                         </div>
                     </div>
 
                     <!-- Submit -->
                     <button class="btn btn-block btn-primary" type="submit">
-                        LOGIN
+                        GİRİŞ YAP
                     </button>
                 </form>
 
                 <!-- Text -->
                 <p class="mb-0 font-size-sm text-center">
-                    Don't have an account? <a class="text-underline" href="register.html">Sign up</a>
+                   Bir hesabın yok mu? <a class="text-underline" href="{% url 'register' %}">Kayıt ol.</a>
                 </p>
             </div>
         </div>

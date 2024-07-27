@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'app',
     'crispy_forms',
     'crispy_bootstrap4',
+
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -48,7 +49,7 @@ ROOT_URLCONF = 'LMS.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -56,7 +57,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-            ],
+                                  ],
         },
     },
 ]
@@ -71,7 +72,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
+                }
 }
 
 
@@ -126,12 +127,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login'
 
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'gencels14@gmail.com'
 EMAIL_HOST_PASSWORD = 'encm atjf qeep qhvx'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+ADMIN_EMAIL = 'gencels14@gmail.com'  # Admin e-posta adresiniz
 
 
 CSRF_TRUSTED_ORIGINS=[]

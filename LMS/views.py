@@ -1,9 +1,37 @@
 from django.contrib import messages
-from django.shortcuts import redirect,render
-from app.models import Categories,Course,Level,Video,UserCourse
+from django.shortcuts import redirect, render
+from app.models import Categories, Course, Level, Video, UserCourse
 from django.template.loader import render_to_string
 from django.http import JsonResponse
 from django.db.models import Sum
+from django.core.mail import send_mail
+from django.http import HttpResponse
+from .forms import ContactForm
+
+
+def contact_us(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Form verilerini al
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+
+            # E-posta gönderme
+            send_mail(
+                'Skola ile ilgili bir sorum var!',
+                f'Ad: {name}\nE-posta: {email}\n\nMesaj:\n{message}',
+                email,  # Mesajın gönderileceği e-posta adresi
+    ['sevvalgencel6@gmail.com'],  # admin e-posta adresi
+                fail_silently=False,
+            )
+            form = ContactForm()
+            return render(request, 'Main/contact_us.html', {'form': form, 'success': True})
+    else:
+            form = ContactForm()
+
+    return render(request, 'Main/contact_us.html', {'form': form})
 
 
 
@@ -95,7 +123,7 @@ def COURSE_DETAILS(request,slug):
 
     course_id = Course.objects.get(slug = slug)
     try:
-        check_enroll = UserCourse.objects.get(user = request.user,course = course_id)
+        check_enroll = UserCourse.objects.get(user = request.user, course = course_id)
     except UserCourse.DoesNotExist:
         check_enroll = None
 
@@ -144,3 +172,9 @@ def MY_COURSE(request):
         'course' : course,
     }
     return render(request,'course/my-course.html',context)
+
+
+def success(request):
+    return HttpResponse('Your message has been sent successfully!')
+
+
