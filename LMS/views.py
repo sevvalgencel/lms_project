@@ -177,4 +177,8 @@ def MY_COURSE(request):
 def success(request):
     return HttpResponse('Your message has been sent successfully!')
 
+def home(request):
+    return render(request, 'home.html')
 
+def my_course_view(request):
+    return render(request, 'my-course.html')

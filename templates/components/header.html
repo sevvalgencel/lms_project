@@ -1,12 +1,12 @@
 {% load static %}
 
 <header class="navbar navbar-expand-xl navbar-light" >
-        <div class="container">
-
-            <!-- Brand -->
-            <a class="navbar-brand" href="index.html">
+    <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{% static 'assets/img/brand-gigas.svg' %}" class="navbar-brand-img" alt="...">
-            </a>
+        </a>
+
 
             <!-- Vertical Menu -->
             <ul class="navbar-nav navbar-vertical ms-xl-4 d-none d-xl-flex">

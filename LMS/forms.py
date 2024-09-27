@@ -13,14 +13,16 @@ class ContactForm(forms.Form):
     name = forms.CharField(
         label='Adınız Soyadınız',
         max_length=100,
+
     )
     email = forms.EmailField(
         label='Email adresiniz',
+
     )
     message = forms.CharField(
-        label='    ',
-
-        widget=forms.Textarea(attrs={ 'placeholder': 'Mesajınızı buraya yazın...'}),
+        label='',
+        label_suffix='',
+        widget=forms.Textarea(attrs={'placeholder': 'Mesajınızı buraya yazın...'}),
     )
 
 
