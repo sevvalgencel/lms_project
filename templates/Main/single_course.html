@@ -5,33 +5,33 @@
    {% load course_tags %}
 
    <script>
-$(document).ready(function(){
+        $(document).ready(function(){
 
-	$(".filter-checkbox").on('click', function(){
-		var filter_object={};
-		$(".filter-checkbox").each(function(index,ele){
-			var filter_value=$(this).val();
-			var filter_key=$(this).data('filter');
-		    console.log(filter_key,filter_value);
-			filter_object[filter_key]=Array.from(document.querySelectorAll('input[data-filter='+filter_key+']:checked')).map(function(el){
-			 	return el.value;
-			});
-		});
+            $(".filter-checkbox").on('click', function(){
+                var filter_object={};
+                $(".filter-checkbox").each(function(index,ele){
+                    var filter_value=$(this).val();
+                    var filter_key=$(this).data('filter');
+                    console.log(filter_key,filter_value);
+                    filter_object[filter_key]=Array.from(document.querySelectorAll('input[data-filter='+filter_key+']:checked')).map(function(el){
+                        return el.value;
+                    });
+                });
 
-		$.ajax({
-			url:'{% url 'filter-data' %}',
-			data:filter_object,
-			dataType:'json',
-			success:function(res){
-			    console.log(res)
-				$("#filteredCourses").html(res.data);
-				var filter_value=$(this).val();
-			    var filter_key=$(this).data('filter');
-			}
-		});
-	});
-});
-</script>
+                $.ajax({
+                    url:'{% url 'filter-data' %}',
+                    data:filter_object,
+                    dataType:'json',
+                    success:function(res){
+                        console.log(res)
+                        $("#filteredCourses").html(res.data);
+                        var filter_value=$(this).val();
+                        var filter_key=$(this).data('filter');
+                    }
+                });
+            });
+        });
+   </script>
 
    <!-- PAGE TITLE
     ================================================== -->
@@ -60,7 +60,9 @@ $(document).ready(function(){
     ================================================== -->
     <div class="container mb-6 mb-xl-8 z-index-2">
         <div class="d-lg-flex align-items-center mb-6 mb-xl-0">
-            <p class="mb-lg-0">We found <span class="text-dark">834 courses</span> available for you</p>
+
+            <p class="mb-lg-0">Sizin için kurslarımızı listeledik.</p>
+
             <div class="ms-lg-auto d-lg-flex flex-wrap">
                 <div class="mb-4 mb-lg-0 ms-lg-6">
                     <div class="border rounded d-flex align-items-center choices-label h-50p">
@@ -253,15 +255,7 @@ $(document).ready(function(){
                                 <div class="position-relative">
                                     <a href="course-single-v5.html" class="d-block stretched-link"><h4 class="line-clamp-2 h-md-48 h-lg-58 me-md-6 me-lg-10 me-xl-4 mb-2">{{i.title}}</h4></a>
 
-                                    <div class="d-lg-flex align-items-end flex-wrap mb-n1">
-                                        <div class="star-rating mb-2 mb-lg-0 me-lg-3">
-                                            <div class="rating" style="width:50%;"></div>
-                                        </div>
 
-                                        <div class="font-size-sm">
-                                            <span>5.45 (5.8k+ reviews)</span>
-                                        </div>
-                                    </div>
 
                                     <div class="row mx-n2 align-items-end">
                                         <div class="col px-2">
@@ -311,25 +305,7 @@ $(document).ready(function(){
                     {% endfor %}
                 </div>
 
-                <!-- PAGINATION
-                ================================================== -->
-                <nav class="mb-11" aria-label="Page navigationa">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true"><i class="fas fa-arrow-left"></i></span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+
 
             </div>
         </div>
