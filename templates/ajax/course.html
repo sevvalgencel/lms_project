@@ -35,13 +35,13 @@
                                 </a>
 
                                      <span class="badge sk-fade-bottom badge-lg badge-primary badge-pill badge-float bottom-0 left-0 mb-4 ms-4 fw-bold">
-                                        <span class="text-white text-uppercase fw-bold font-size-xs">İndirim {{i.discount}} %</span>
+                                        <span class="text-white text-uppercase fw-bold font-size-xs"> {{i.discount}} % İndirim </span>
                                     </span>
                             </div>
 
                             <!-- Footer -->
                             <div class="card-footer px-2 pb-2 mb-1 pt-4 position-relative">
-                                <a href="instructors-single.html" class="d-block">
+                                <a href="{{i.get_absolute_url}}" class="d-block">
                                     <div class="avatar sk-fade-right avatar-xl badge-float position-absolute top-0 right-0 mt-n6 me-5 rounded-circle shadow border border-white border-w-lg">
                                         <img src="{{i.author.author_profile}}" alt="..." class="avatar-img rounded-circle">
                                     </div>
@@ -81,7 +81,7 @@
                                                             </svg>
 
                                                         </div>
-                                                        <div class="font-size-sm">8h 12m</div>
+                                                        <div class="font-size-sm">0</div>
                                                     </div>
                                                 </li>
                                             </ul>

@@ -105,7 +105,7 @@
                                     </a>
 
                                     <span class="badge sk-fade-bottom badge-lg badge-primary badge-pill badge-float bottom-0 left-0 mb-4 ms-4 fw-bold">
-                                        <span class="text-white text-uppercase fw-bold font-size-xs">Discount {{i.discount}} %</span>
+                                        <span class="text-white text-uppercase fw-bold font-size-xs"> {{i.discount}} % İndirim </span>
                                     </span>
                                 </div>
 
@@ -215,20 +215,20 @@
                                     </a>
 
                                     <span class="badge sk-fade-bottom badge-lg badge-primary badge-pill badge-float bottom-0 left-0 mb-4 ms-4">
-                                        <span class="text-white text-uppercase fw-bold font-size-xs">Discount {{i.discount}} %</span>
+                                        <span class="text-white text-uppercase fw-bold font-size-xs"> {{i.discount}} % İndirim </span>
                                     </span>
                                 </div>
 
                                 <!-- Footer -->
                                 <div class="card-footer px-2 pb-2 mb-1 pt-4 position-relative">
-                                    <a href="course-single-v5.html" class="d-block">
+                                    <a href="{{i.get_absolute_url}}" class="d-block">
                                         <div class="avatar avatar-xl badge-float position-absolute top-0 right-0 mt-n6 me-5 rounded-circle shadow border border-white border-w-lg">
                                             <img src="{{i.author.author_profile}}" alt="..." class="avatar-img rounded-circle">
                                         </div>
                                     </a>
 
                                     <!-- Preheading -->
-                                    <a href="course-single-v5.html"><span class="mb-1 d-inline-block text-gray-800">{{i.category}}</span></a>
+                                    <a href="{{i.get_absolute_url}}" ><span class="mb-1 d-inline-block text-gray-800">{{i.course.category.name}}</span></a>
 
 
                                     <!-- Heading -->
@@ -249,7 +249,7 @@
                                                                 </svg>
 
                                                             </div>
-                                                            <div class="font-size-sm">5 lessons</div>
+
                                                         </div>
                                                     </li>
                                                     <li class="nav-item px-3">

@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Search{% endblock %}
+{% block title %}Arama{% endblock %}
 {% load course_tags %}
 {% load static %}
 {% block content %}
@@ -48,7 +48,7 @@
                                     </a>
 
                                     <span class="badge sk-fade-bottom badge-lg badge-primary badge-pill badge-float bottom-0 left-0 mb-4 ms-4 fw-bold">
-                                        <span class="text-white text-uppercase fw-bold font-size-xs">Discount {{i.discount}} %</span>
+                                        <span class="text-white text-uppercase fw-bold font-size-xs">{{i.discount}} % İndirim </span>
                                     </span>
                                 </div>
 
@@ -81,7 +81,7 @@
                                                                 </svg>
 
                                                             </div>
-                                                            <div class="font-size-sm">5 lessons</div>
+                                                            <div class="font-size-sm"></div>
                                                         </div>
                                                     </li>
                                                     <li class="nav-item px-3">
@@ -94,16 +94,25 @@
                                                                 </svg>
 
                                                             </div>
-                                                            <div class="font-size-sm">8h 12m</div>
+
                                                         </div>
                                                     </li>
                                                 </ul>
                                             </div>
 
-                                                <div class="col-auto px-2 text-right">
-                                                    <del class="font-size-sm">₺ {{i.price}}</del>
-                                                    <ins class="h4 mb-0 d-block mb-lg-n1">₺ {% discount_calculation i.price i.discount %}</ins>
-                                                </div>
+                                                 <div>
+                                                    {% if i.price == 0 %}
+                                                            <div class="col-auto px-2 text-right">
+                                                                <ins class="h4 mb-0 d-block mb-lg-n1" ><a href="#" class="badge badge-primary">Ücretsiz </a> </ins>
+                                                            </div>
+                                                    {% else %}
+                                                            <div class="col-auto px-2 text-right">
+                                                                <del class="font-size-sm">₺ {{i.price}}</del>
+                                                                <ins class="h4 mb-0 d-block mb-lg-n1">₺ {% discount_calculation i.price i.discount %}</ins>
+                                                            </div>
+                                                    {% endif %}
+                                                  </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -151,7 +160,7 @@
                                     </a>
 
                                     <span class="badge sk-fade-bottom badge-lg badge-primary badge-pill badge-float bottom-0 left-0 mb-4 ms-4">
-                                        <span class="text-white text-uppercase fw-bold font-size-xs">Discount {{i.discount}} %</span>
+                                        <span class="text-white text-uppercase fw-bold font-size-xs"> {{i.discount}} % İndirim </span>
                                     </span>
                                 </div>
 
@@ -184,7 +193,7 @@
                                                                 </svg>
 
                                                             </div>
-                                                            <div class="font-size-sm">5 lessons</div>
+
                                                         </div>
                                                     </li>
                                                     <li class="nav-item px-3">
@@ -197,24 +206,22 @@
                                                                 </svg>
 
                                                             </div>
-                                                            <div class="font-size-sm">8h 12m</div>
+
                                                         </div>
                                                     </li>
                                                 </ul>
-                                            </div>
-
+                                                </div>
                                                 {% if i.price == 0 %}
-                                                <div class="col-auto px-2 text-right">
-                                                    <ins class="h4 mb-0 d-block mb-lg-n1" ><a href="#" class="badge badge-primary">Ücretsiz </a> </ins>
-                                                </div>
-                                                  {% else %}
-                                                <div class="col-auto px-2 text-right">
-                                                    <del class="font-size-sm">₺ {{i.price}}</del>
-                                                    <ins class="h4 mb-0 d-block mb-lg-n1">₺ {% discount_calculation i.price i.discount %}</ins>
-                                                </div>
-                                                  {% endif %}
-
-                                        </div>
+                                                        <div class="col-auto px-2 text-right">
+                                                            <ins class="h4 mb-0 d-block mb-lg-n1" ><a href="#" class="badge badge-primary">Ücretsiz </a> </ins>
+                                                        </div>
+                                                {% else %}
+                                                        <div class="col-auto px-2 text-right">
+                                                            <del class="font-size-sm">₺ {{i.price}}</del>
+                                                            <ins class="h4 mb-0 d-block mb-lg-n1">₺ {% discount_calculation i.price i.discount %}</ins>
+                                                        </div>
+                                                {% endif %}
+                                            </div>
                                     </div>
                                 </div>
                             </div>
