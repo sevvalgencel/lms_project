@@ -37,8 +37,8 @@
                 <div class="mb-4 mb-xl-0 ms-xl-6">
                     <!-- Search -->
                    <form class="w-150" method="get" action="{% url 'search_course' %}">
-                                <div class="input-group border rounded" >
-                                    <div class="input-group-prepend">
+                            <div class="input-group border rounded" >
+                                <div class="input-group-prepend">
                                         <button class="btn btn-sm text-secondary icon-xs d-flex align-items-center" type="submit">
                                             <!-- Icon -->
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,9 +47,9 @@
                                             </svg>
 
                                         </button>
-                                    </div>
-                                    <input class="form-control form-control-sm border-0 ps-0" type="search" placeholder="Ne öğrenmek istersiniz?" aria-label="Search" name="query">
                                 </div>
+                                    <input class="form-control form-control-sm border-0 ps-0" type="search" placeholder="Kurslarınızda arayın" aria-label="Search" name="query">
+                            </div>
                    </form>
                 </div>
 
@@ -103,7 +103,7 @@
                                 <div class="card-footer px-2 pb-2 mb-1 pt-4 position-relative">
                                     <a href="{{i.get_absolute_url}}" class="d-block">
                                         <div class="avatar avatar-xl badge-float position-absolute top-0 right-0 mt-n6 me-5 rounded-circle shadow border border-white border-w-lg">
-                                            <img src="{{i.author.author_profile}}" alt="..." class="avatar-img rounded-circle">
+                                            <img src="{{i.course.author.author_profile}}" alt="..." class="avatar-img rounded-circle">
                                         </div>
                                     </a>
 
