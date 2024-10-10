@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+
+<!-- PAGE TITLE
+    ================================================== -->
+    <header class="py-8 py-md-11" style="background-image: none;">
+        <div class="container text-center py-xl-2">
+            <h1 class="display-4 fw-semi-bold mb-0">Profile Güncelleme</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb-scroll justify-content-center">
+                    <li class="breadcrumb-item">
+                        <a class="text-gray-800" href="{% url 'home' %}">
+                            Home
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item text-gray-800 active" aria-current="page">
+                        Profili Güncelle
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <!-- Img -->
+        <img class="d-none img-fluid" src="...html" alt="...">
+    </header>
+
+    <!-- Card -->
+            <div class="card" style="width:80%;margin-left:10%;">
+                {% include 'components/msg.html' %}
+                <br>
+              <div class="card-body" >
+             
+                <form method="post" action="{% url 'profile_update' %}">
+                  {% csrf_token %}
+                  <div class="row">
+                        <div class="col">
+                            <div class="form-group mb-4">
+                              <label>Ad</label>
+                             <input type="text" class="form-control"  placeholder="Enter First Name" name="first_name" value="{{user.first_name}}" >
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group mb-4">
+                              <label>Soyad</label>
+                              <input type="text" class="form-control" placeholder="Enter Last Name" name="last_name" value="{{user.last_name}}" >
+                            </div>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col">
+                             <div class="form-group mb-4">
+                                <label>Email </label>
+                                <input type="email" class="form-control" placeholder="Enter Email" name="email" value="{{user.email}}" readonly>
+                             </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group mb-4">
+                               <label>Kullanıcı adı</label>
+                               <input type="text" class="form-control" placeholder="Enter Username" name="username" value="{{user.username}}" readonly>
+                            </div>
+                        </div>
+                      <div class="col-12">
+                            <div class="form-group mb-4">
+                               <label>Şifre</label>
+                               <input type="password" class="form-control" placeholder="Eğer şifreyi değiştirmek isterseniz yeni şifrenizi giriş yapın" name="password">
+                            </div>
+                        </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Profili güncelle </button>
+                </form>
+
+              </div>
+            </div>
+{% endblock %}
